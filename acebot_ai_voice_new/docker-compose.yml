@@ -1,0 +1,13 @@
+services:
+  api: &main_app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: acebot_ai_voice:${ACEBOT_AI_VOICE_VERSION:-latest}
+    restart: always
+    env_file:
+      - .env
+    environment:
+      ACEBOT_AI_VOICE_HOST: 0.0.0.0
+
+
